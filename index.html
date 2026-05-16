@@ -3,204 +3,192 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rocky Bhai VIP - Telegram</title>
-
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '968357979280809');
-    fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=968357979280809&ev=PageView&noscript=1"
-    /></noscript>
+    
+    <meta name="facebook-domain-verification" content="t74cmci9s8wdic96dcgvg83r8ldqz7" />
+    
+    <title>SURESHOT - Signals Active</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Orbitron:wght@700&display=swap" rel="stylesheet">
     <style>
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+            user-select: none;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            background-color: #030712;
+            background-image: radial-gradient(circle at center, #0f172a 0%, #030712 100%);
             color: #ffffff;
+            height: 100vh;
             display: flex;
-            align-items: center;
             justify-content: center;
-            min-height: 100vh;
+            align-items: center;
+            padding: 20px;
         }
 
-        /* Entry Animation */
-        @keyframes slideUpFade {
-            from { opacity: 0; transform: translateY(40px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .main-card {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 24px;
-            padding: 40px 20px;
-            width: 90%;
+        .container {
+            width: 100%;
             max-width: 400px;
+            background: rgba(15, 23, 42, 0.4);
+            border: 1px solid rgba(56, 189, 248, 0.15);
+            border-radius: 24px;
+            padding: 50px 30px;
             text-align: center;
-            animation: slideUpFade 0.8s ease-out forwards;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            box-shadow: 0 0 40px rgba(56, 189, 248, 0.05);
+            position: relative;
         }
 
-        /* Floating Logo Animation */
-        @keyframes float {
-            0% { transform: translateY(0px); box-shadow: 0 5px 15px rgba(251, 191, 36, 0.3); }
-            50% { transform: translateY(-10px); box-shadow: 0 15px 25px rgba(251, 191, 36, 0.5); }
-            100% { transform: translateY(0px); box-shadow: 0 5px 15px rgba(251, 191, 36, 0.3); }
+        /* Top Badge */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            color: #38bdf8;
+            margin-bottom: 35px;
+            text-transform: uppercase;
         }
 
-        .logo {
-            width: 110px;
-            height: 110px;
+        .dot {
+            width: 8px;
+            height: 8px;
+            background-color: #38bdf8;
             border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid #fbbf24;
-            margin-bottom: 20px;
-            animation: float 3s ease-in-out infinite;
+            box-shadow: 0 0 10px #38bdf8;
+            animation: pulse 1.5s infinite;
         }
 
+        @keyframes pulse {
+            0% { transform: scale(0.95); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.5; }
+            100% { transform: scale(0.95); opacity: 1; }
+        }
+
+        /* Headings */
         h1 {
-            font-size: 2.2rem;
-            color: #fbbf24;
-            margin-bottom: 10px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        p.subtitle {
-            font-size: 1.1rem;
-            color: #cbd5e1;
-            margin-bottom: 30px;
-            line-height: 1.5;
-        }
-        
-        .highlight {
-            color: #10b981;
-            font-weight: bold;
-        }
-
-        .action-area {
-            position: relative;
-            margin-top: 20px;
-        }
-
-        .members-joined {
-            display: inline-block;
-            background: #1e293b;
-            color: #10b981;
-            font-size: 0.95rem;
-            font-weight: bold;
-            padding: 8px 20px;
-            border-radius: 20px;
-            border: 1px solid #334155;
-            margin-bottom: -15px;
-            position: relative;
-            z-index: 2;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-        }
-
-        .members-joined span {
-            font-size: 1.1rem;
-        }
-
-        @keyframes btnPulse {
-            0% { box-shadow: 0 0 0 0 rgba(0, 136, 204, 0.6); }
-            70% { box-shadow: 0 0 0 15px rgba(0, 136, 204, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(0, 136, 204, 0); }
-        }
-
-        .telegram-btn {
-            display: block;
-            background: linear-gradient(90deg, #0088cc, #00aaff);
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 1.3rem;
+            font-size: 26px;
             font-weight: 800;
-            padding: 22px 20px 18px 20px;
-            border-radius: 16px;
             text-transform: uppercase;
             letter-spacing: 1px;
-            transition: transform 0.3s ease;
-            animation: btnPulse 2s infinite;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
+            line-height: 1.2;
+            margin-bottom: 5px;
         }
 
-        .telegram-btn::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 50%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-            transform: skewX(-20deg);
-            animation: shine 3s infinite;
+        .highlight {
+            color: #38bdf8;
+            text-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
+            font-size: 28px;
+            display: block;
+            margin-bottom: 40px;
         }
 
-        @keyframes shine {
-            0% { left: -100%; }
-            20% { left: 200%; }
-            100% { left: 200%; }
+        /* Timer */
+        .timer {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 55px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+            margin-bottom: 10px;
         }
 
-        .telegram-btn:hover {
-            transform: scale(1.05);
+        .subtext {
+            font-size: 11px;
+            color: #64748b;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 40px;
+        }
+
+        /* CTA Button */
+        .cta-btn {
+            display: block;
+            width: 100%;
+            background-color: #f8fafc;
+            color: #0f172a;
+            padding: 18px 20px;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: 800;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            background-color: #ffffff;
+            box-shadow: 0 10px 25px rgba(255,255,255,0.1);
+        }
+
+        .cta-btn:active {
+            transform: translateY(1px);
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 35px;
+            font-size: 10px;
+            color: #334155;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 600;
         }
     </style>
 </head>
 <body>
 
-    <div class="main-card">
-        <img src="logo.png" alt="Rocky Bhai VIP" class="logo">
+    <div class="container">
+        <div class="badge">
+            <div class="dot"></div>
+            SIGNALS ACTIVE
+        </div>
 
-        <h1>Rocky Bhai VIP</h1>
-        <p class="subtitle">
-            India's Best Free VIP Channel<br>
-            <span class="highlight">95% Accuracy | 5x Live Predictions</span>
-        </p>
+        <h1>ONLY NUMBER</h1>
+        <span class="highlight">SURESHOT</span>
 
-        <div class="action-area">
-            <div class="members-joined">
-                🔥 <span id="counter">1000</span>+ Members Already Joined
-            </div>
-            
-            <a href="https://t.me/+Lb4fXjCBCcgyODRl" class="telegram-btn" target="_blank">
-                JOIN TELEGRAM
-            </a>
+        <div class="timer" id="countdown">04:54</div>
+        <div class="subtext">INVITE VALIDATED</div>
+
+        <a href="https://t.me/+LRtglAEgxrtlNDI1" class="cta-btn" id="joinBtn">
+            JOIN TELEGRAM NOW
+        </a>
+
+        <div class="footer">
+            ADS BY @rockymanger
         </div>
     </div>
 
     <script>
-        const counterElement = document.getElementById('counter');
-        let currentCount = 1000;
-        const targetCount = 1247; 
-        
-        const countInterval = setInterval(() => {
-            currentCount += 7; 
-            if (currentCount >= targetCount) {
-                counterElement.textContent = targetCount;
-                clearInterval(countInterval);
-            } else {
-                counterElement.textContent = currentCount;
-            }
-        }, 20);
-    </script>
+        let timeInSecs = 294; 
+        const timerElement = document.getElementById("countdown");
 
+        const updateTimer = setInterval(() => {
+            let minutes = Math.floor(timeInSecs / 60);
+            let seconds = timeInSecs % 60;
+
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+
+            timerElement.innerHTML = `${minutes}:${seconds}`;
+
+            if (timeInSecs > 0) {
+                timeInSecs--;
+            }
+        }, 1000);
+    </script>
 </body>
 </html>
