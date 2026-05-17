@@ -1,194 +1,170 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <meta name="facebook-domain-verification" content="t74cmci9s8wdic96dcgvg83r8ldqz7" />
-    
-    <title>SURESHOT - Signals Active</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    <title>Rocky Bhai Ka Jalwa - Colour Trading</title>
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '968357979280809');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=968357979280809&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif;
-            user-select: none;
-        }
-
         body {
-            background-color: #030712;
-            background-image: radial-gradient(circle at center, #0f172a 0%, #030712 100%);
+            background: radial-gradient(circle at center, #1a1a2e, #16213e, #0f3460);
             color: #ffffff;
-            height: 100vh;
+            font-family: 'Arial', sans-serif;
             display: flex;
-            justify-content: center;
             align-items: center;
-            padding: 20px;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
         }
-
-        .container {
-            width: 100%;
-            max-width: 400px;
-            background: rgba(15, 23, 42, 0.4);
-            border: 1px solid rgba(56, 189, 248, 0.15);
-            border-radius: 24px;
-            padding: 50px 30px;
+        .landing-box {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 0 25px #ffea00;
+            border: 2px solid #ffea00;
+            max-width: 90%;
+            width: 450px;
             text-align: center;
-            box-shadow: 0 0 40px rgba(56, 189, 248, 0.05);
             position: relative;
         }
-
-        /* Top Badge */
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(56, 189, 248, 0.1);
-            border: 1px solid rgba(56, 189, 248, 0.2);
-            padding: 8px 16px;
-            border-radius: 50px;
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: 1.5px;
-            color: #38bdf8;
-            margin-bottom: 35px;
-            text-transform: uppercase;
+        .landing-box::before {
+            content: '';
+            position: absolute;
+            top: -5px; left: -5px; right: -5px; bottom: -5px;
+            background: linear-gradient(45deg, #ff0055, #ffea00, #00ffcc, #ff0055);
+            z-index: -1;
+            filter: blur(20px);
+            opacity: 0.7;
+            border-radius: 25px;
         }
-
-        .dot {
-            width: 8px;
-            height: 8px;
-            background-color: #38bdf8;
-            border-radius: 50%;
-            box-shadow: 0 0 10px #38bdf8;
-            animation: pulse 1.5s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(0.95); opacity: 1; }
-            50% { transform: scale(1.2); opacity: 0.5; }
-            100% { transform: scale(0.95); opacity: 1; }
-        }
-
-        /* Headings */
         h1 {
-            font-size: 26px;
-            font-weight: 800;
+            color: #ffea00;
+            font-size: 34px;
+            margin: 0 0 10px 0;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            line-height: 1.2;
-            margin-bottom: 5px;
-        }
-
-        .highlight {
-            color: #38bdf8;
-            text-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
-            font-size: 28px;
-            display: block;
-            margin-bottom: 40px;
-        }
-
-        /* Timer */
-        .timer {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 55px;
-            font-weight: 700;
-            letter-spacing: 3px;
-            text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-            margin-bottom: 10px;
-        }
-
-        .subtext {
-            font-size: 11px;
-            color: #64748b;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            font-weight: 600;
-            margin-bottom: 40px;
-        }
-
-        /* CTA Button */
-        .cta-btn {
-            display: block;
-            width: 100%;
-            background-color: #f8fafc;
-            color: #0f172a;
-            padding: 18px 20px;
-            border-radius: 12px;
-            font-size: 15px;
-            font-weight: 800;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-            border: none;
-            cursor: pointer;
-        }
-
-        .cta-btn:hover {
-            transform: translateY(-2px);
-            background-color: #ffffff;
-            box-shadow: 0 10px 25px rgba(255,255,255,0.1);
-        }
-
-        .cta-btn:active {
-            transform: translateY(1px);
-        }
-
-        /* Footer */
-        .footer {
-            margin-top: 35px;
-            font-size: 10px;
-            color: #334155;
+            text-shadow: 2px 2px 10px #ff0055;
             letter-spacing: 2px;
+        }
+        .subtitle {
+            font-size: 20px;
+            color: #00ffcc;
+            margin-bottom: 25px;
+            font-weight: 900;
+            line-height: 1.4;
+        }
+        .highlight {
+            color: #ff0055;
+            font-size: 24px;
             text-transform: uppercase;
-            font-weight: 600;
+            text-shadow: 0 0 5px #ff0055;
+        }
+        .timer-container {
+            background: #111;
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #444;
+            margin-bottom: 25px;
+        }
+        .timer-text {
+            font-size: 18px;
+            color: #ccc;
+        }
+        .timer {
+            font-size: 60px;
+            color: #ff0055;
+            font-weight: bold;
+            display: block;
+            margin-top: 5px;
+            text-shadow: 0 0 15px #ff0055;
+        }
+        .telegram-btn {
+            background: linear-gradient(90deg, #0088cc, #005580);
+            color: white;
+            border: 2px solid #00ffcc;
+            padding: 18px 30px;
+            font-size: 22px;
+            font-weight: bold;
+            border-radius: 35px;
+            cursor: pointer;
+            width: 100%;
+            text-transform: uppercase;
+            box-shadow: 0 0 20px rgba(0, 136, 204, 0.7);
+            transition: all 0.3s ease;
+        }
+        .telegram-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px #00ffcc;
+            background: linear-gradient(90deg, #005580, #0088cc);
+        }
+        .footer-note {
+            margin-top: 15px;
+            font-size: 13px;
+            color: #888;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <div class="badge">
-            <div class="dot"></div>
-            SIGNALS ACTIVE
+    <div class="landing-box">
+        <h1>👑 Rocky Bhai Ka Jalwa Hai 👑</h1>
+        <p class="subtitle">
+            Colour Trading Premium Hack!<br>
+            <span class="highlight">Din mein 3 baar FREE Number</span>
+        </p>
+        
+        <div class="timer-container">
+            <div class="timer-text">Jaldi Karein! VIP Access band ho jayega:</div>
+            <span class="timer" id="countdown">25</span>
         </div>
 
-        <h1>ONLY NUMBER</h1>
-        <span class="highlight">SURESHOT</span>
-
-        <div class="timer" id="countdown">04:54</div>
-        <div class="subtext">INVITE VALIDATED</div>
-
-        <a href="https://t.me/+LRtglAEgxrtlNDI1" class="cta-btn" id="joinBtn">
-            JOIN TELEGRAM NOW
-        </a>
-
-        <div class="footer">
-            ADS BY @rockymanger
-        </div>
+        <button class="telegram-btn" onclick="goToTelegram()">🚀 JOIN TELEGRAM NOW</button>
+        
+        <p class="footer-note">Agar aap button par click nahi karte, toh automatically redirect ho jayenge.</p>
     </div>
 
     <script>
-        let timeInSecs = 294; 
-        const timerElement = document.getElementById("countdown");
+        // 👇 APNA TELEGRAM LINK YAHAN DAALEIN 👇
+        const TELEGRAM_LINK = "https://t.me/+LRtglAEgxrtlNDI1"; 
 
-        const updateTimer = setInterval(() => {
-            let minutes = Math.floor(timeInSecs / 60);
-            let seconds = timeInSecs % 60;
+        let timeLeft = 25;
+        const timerDisplay = document.getElementById('countdown');
 
-            minutes = minutes < 10 ? "0" + minutes : minutes;
-            seconds = seconds < 10 ? "0" + seconds : seconds;
+        // Timer Logic
+        const countdownInterval = setInterval(() => {
+            timeLeft--;
+            timerDisplay.textContent = timeLeft;
 
-            timerElement.innerHTML = `${minutes}:${seconds}`;
-
-            if (timeInSecs > 0) {
-                timeInSecs--;
+            if (timeLeft <= 0) {
+                clearInterval(countdownInterval);
+                goToTelegram();
             }
         }, 1000);
+
+        // Redirect Function
+        function goToTelegram() {
+            window.location.href = t.me/+LRtglAEgxrtlNDI1;
+        }
     </script>
+
 </body>
-</html>
+                                            </html>
+                                            
