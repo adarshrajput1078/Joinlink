@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free Number SureShot</title>
-
+    <title>Dev Army | Join Free Telegram</title>
+    
     <!-- Meta Pixel Code -->
     <script>
     !function(f,b,e,v,n,t,s)
@@ -15,7 +15,7 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '968357979280809');
+    fbq('init', '968357979280809'); 
     fbq('track', 'PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none"
@@ -24,153 +24,177 @@
     <!-- End Meta Pixel Code -->
 
     <style>
-        /* Classic Heavy Black & Gold Theme */
         body {
-            background-color: #0d0d0d;
-            background-image: radial-gradient(circle, #1a1a1a 10%, #000000 90%);
-            color: #ffffff;
-            font-family: 'Arial', sans-serif;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
+            background-color: #e9ecef; /* Light grey background */
             margin: 0;
-            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
-        .container {
-            background: #141414;
-            padding: 40px 30px;
-            border-radius: 12px;
-            border: 2px solid #c5a059; /* Classic Gold */
-            box-shadow: 0 10px 30px rgba(197, 160, 89, 0.2);
-            max-width: 90%;
-            width: 420px;
+
+        .card {
+            background-color: #ffffff;
+            width: 90%;
+            max-width: 380px;
+            border-radius: 40px; /* Bada curve just like screenshot */
+            padding: 40px 20px;
             text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-        
-        /* Logo Styling */
-        .logo {
-            max-width: 130px;
-            height: auto;
-            margin-bottom: 15px;
-            border-radius: 50%; /* Agar logo square hai toh circle kar dega */
-            box-shadow: 0 0 20px rgba(197, 160, 89, 0.5); /* Gold glow effect */
-            border: 2px solid #c5a059;
+
+        .profile-img {
+            width: 170px;
+            height: 170px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
         }
 
         h1 {
-            color: #c5a059; /* Gold */
-            font-size: 32px;
-            margin: 0 0 10px 0;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            font-family: 'Georgia', serif; /* Screenshot wale font ka exact match */
+            font-size: 26px;
             font-weight: 900;
+            color: #111;
+            margin: 10px 0 25px 0;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
-        .subtitle {
-            font-size: 18px;
-            color: #eeeeee;
-            margin-bottom: 20px;
-            line-height: 1.5;
-        }
-        .highlight {
-            color: #00e676; /* Trustable Green for FREE */
-            font-size: 22px;
+
+        .btn {
+            background-color: #0d5cbb; /* Screenshot wala exact blue color */
+            color: white;
+            text-decoration: none;
+            font-size: 17px;
             font-weight: bold;
-            display: block;
+            padding: 14px 0;
+            width: 85%;
+            border-radius: 30px;
+            display: inline-block;
+            margin: 10px 0;
+            box-shadow: 0 4px 10px rgba(13, 92, 187, 0.3);
+        }
+
+        /* Timer Setup */
+        .timer-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .time-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .numbers {
+            font-size: 28px;
+            font-weight: bold;
+            color: #ef4453; /* Red color of the numbers */
+            letter-spacing: 2px;
+        }
+
+        .colon {
+            font-size: 28px;
+            font-weight: bold;
+            color: #ef4453;
+            margin-bottom: 20px;
+        }
+
+        .labels {
+            font-size: 10px;
+            font-weight: 800;
+            color: #be12be; /* Purple color of the labels */
             margin-top: 5px;
         }
-        .timer-box {
-            background: #000000;
-            padding: 20px;
-            border-radius: 8px;
-            border: 1px solid #333;
-            margin-bottom: 25px;
-        }
-        .timer-text {
-            font-size: 16px;
-            color: #aaaaaa;
-            margin-bottom: 10px;
-        }
-        .timer {
-            font-size: 55px;
-            color: #c5a059;
+
+        /* Footer Text */
+        .footer {
+            margin-top: 30px;
+            font-size: 12px;
             font-weight: bold;
-            line-height: 1;
+            color: #000;
         }
-        .telegram-btn {
-            display: block;
-            background: #2AABEE; /* Official Telegram Blue */
-            color: #ffffff;
-            text-decoration: none;
-            padding: 18px 20px;
-            font-size: 20px;
-            font-weight: bold;
-            border-radius: 6px;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(42, 171, 238, 0.4);
-        }
-        .telegram-btn:hover {
-            background: #2298d6;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(42, 171, 238, 0.6);
-        }
-        .footer-note {
-            margin-top: 20px;
-            font-size: 13px;
-            color: #666;
+
+        .agency {
+            color: #ef4453; /* Pinkish red */
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <!-- Logo yahan add kiya gaya hai -->
-        <img src="logo.png" alt="Rocky Bhai Logo" class="logo">
-
-        <h1>Free Number SureShot🔥</h1>
-        <p class="subtitle">
-            Colour Trading Premium Access
-            <span class="highlight">Per Day 3 Free Number Sureshot!</span>
-        </p>
+    <div class="card">
+        <!-- 👇 DEV ARMY LOGO (PNG) YAHAN AAYEGA 👇 -->
+        <img src="dev_army_logo.png" alt="Dev Army" class="profile-img">
         
-        <div class="timer-box">
-            <div class="timer-text">Channel Link Expire In:</div>
-            <div class="timer" id="countdown">25</div>
+        <h1>DEV ARMY</h1>
+        
+        <!-- Button 1 -->
+        <a href="#" class="btn" onclick="fireLeadAndGo(event)">🚀 Join Free Telegram</a>
+        
+        <!-- Exact Timer Design -->
+        <div class="timer-container">
+            <div class="time-box">
+                <span class="numbers">00</span>
+                <span class="labels">HOURS</span>
+            </div>
+            <span class="colon">:</span>
+            <div class="time-box">
+                <span class="numbers">00</span>
+                <span class="labels">MINUTES</span>
+            </div>
+            <span class="colon">:</span>
+            <div class="time-box">
+                <span class="numbers" id="sec">03</span>
+                <span class="labels">SECONDS</span>
+            </div>
         </div>
 
-        <!-- Yahan Href mein apna Telegram Link daalna hai -->
-        <a href="https://t.me/+LRtglAEgxrtlNDI1" class="telegram-btn" id="teleBtn" onclick="trackPixelAndGo()">
-            🚀 Join Telegram Now
-        </a>
-        
-        <p class="footer-note">Aap automatically 25 seconds mein Telegram par redirect ho jayenge.</p>
+        <!-- Button 2 -->
+        <a href="#" class="btn" onclick="fireLeadAndGo(event)">🚀 Join Free Telegram</a>
+
+        <!-- Footer -->
+        <div class="footer">
+            Ads managed by <span class="agency">DevArmyAdvertising</span>
+        </div>
     </div>
 
     <script>
-        // 👇 APNA TELEGRAM LINK YAHAN BHI DAALEIN (Auto-redirect ke liye) 👇
-        const TELEGRAM_LINK = "https://t.me/+LRtglAEgxrtlNDI1"; 
+        // 👇 APNA TELEGRAM LINK YAHAN DAALO 👇
+        const TELEGRAM_LINK = "https://t.me/+euf1Rmi_ToVlMmFl"; 
+        
+        let timeLeft = 3; 
 
-        let timeLeft = 25;
-        const timerDisplay = document.getElementById('countdown');
-
-        // Facebook Pixel Event Tracking Function
-        function trackPixelAndGo() {
-            // Button click hone par Meta Pixel ko 'Lead' bhejega
+        function fireLeadAndGo(e) {
+            if(e) e.preventDefault(); 
+            
+            // Pixel Lead Fire
             if (typeof fbq !== 'undefined') {
                 fbq('track', 'Lead'); 
             }
+            
+            // Redirect
+            setTimeout(() => {
+                window.location.href = TELEGRAM_LINK;
+            }, 500);
         }
 
-        // Timer and Auto-Redirect Logic
-        const countdownInterval = setInterval(() => {
+        // Timer Logic
+        const timerInterval = setInterval(() => {
             timeLeft--;
-            timerDisplay.textContent = timeLeft;
+            let displayTime = "0" + timeLeft;
+            document.getElementById('sec').textContent = displayTime;
 
             if (timeLeft <= 0) {
-                clearInterval(countdownInterval);
-                trackPixelAndGo(); // Redirect se pehle pixel fire karega
-                window.location.href = TELEGRAM_LINK; // Auto Redirect
+                clearInterval(timerInterval);
+                fireLeadAndGo(); 
             }
         }, 1000);
     </script>
