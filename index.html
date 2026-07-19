@@ -25,7 +25,7 @@
 
     <style>
         body {
-            background-color: #e9ecef; /* Light grey background */
+            background-color: #e9ecef;
             margin: 0;
             display: flex;
             justify-content: center;
@@ -38,7 +38,7 @@
             background-color: #ffffff;
             width: 90%;
             max-width: 380px;
-            border-radius: 40px; /* Bada curve just like screenshot */
+            border-radius: 40px;
             padding: 40px 20px;
             text-align: center;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
@@ -56,7 +56,7 @@
         }
 
         h1 {
-            font-family: 'Georgia', serif; /* Screenshot wale font ka exact match */
+            font-family: 'Georgia', serif;
             font-size: 26px;
             font-weight: 900;
             color: #111;
@@ -66,7 +66,7 @@
         }
 
         .btn {
-            background-color: #0d5cbb; /* Screenshot wala exact blue color */
+            background-color: #0d5cbb;
             color: white;
             text-decoration: none;
             font-size: 17px;
@@ -97,7 +97,7 @@
         .numbers {
             font-size: 28px;
             font-weight: bold;
-            color: #ef4453; /* Red color of the numbers */
+            color: #ef4453;
             letter-spacing: 2px;
         }
 
@@ -111,7 +111,7 @@
         .labels {
             font-size: 10px;
             font-weight: 800;
-            color: #be12be; /* Purple color of the labels */
+            color: #be12be;
             margin-top: 5px;
         }
 
@@ -124,7 +124,7 @@
         }
 
         .agency {
-            color: #ef4453; /* Pinkish red */
+            color: #ef4453;
         }
     </style>
 </head>
@@ -137,7 +137,7 @@
         <h1>DEV ARMY</h1>
         
         <!-- Button 1 -->
-        <a href="#" class="btn" onclick="fireLeadAndGo(event)">🚀 Join Free Telegram</a>
+        <a href="#" class="btn" onclick="fireSubscribeAndGo(event)">🚀 Join Free Telegram</a>
         
         <!-- Exact Timer Design -->
         <div class="timer-container">
@@ -158,7 +158,7 @@
         </div>
 
         <!-- Button 2 -->
-        <a href="#" class="btn" onclick="fireLeadAndGo(event)">🚀 Join Free Telegram</a>
+        <a href="#" class="btn" onclick="fireSubscribeAndGo(event)">🚀 Join Free Telegram</a>
 
         <!-- Footer -->
         <div class="footer">
@@ -167,17 +167,17 @@
     </div>
 
     <script>
-        // 👇 APNA TELEGRAM LINK YAHAN DAALO 👇
+        // Yahan tumhara link pehle se set hai
         const TELEGRAM_LINK = "https://t.me/+euf1Rmi_ToVlMmFl"; 
         
         let timeLeft = 3; 
 
-        function fireLeadAndGo(e) {
+        function fireSubscribeAndGo(e) {
             if(e) e.preventDefault(); 
             
-            // Pixel Lead Fire
+            // 🚨 YAHAN CHANGE KIYA HAI - Ab ye 'Subscribe' fire karega 🚨
             if (typeof fbq !== 'undefined') {
-                fbq('track', 'Lead'); 
+                fbq('track', 'Subscribe'); 
             }
             
             // Redirect
@@ -194,7 +194,7 @@
 
             if (timeLeft <= 0) {
                 clearInterval(timerInterval);
-                fireLeadAndGo(); 
+                fireSubscribeAndGo(); 
             }
         }, 1000);
     </script>
