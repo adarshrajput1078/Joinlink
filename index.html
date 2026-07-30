@@ -17,7 +17,6 @@
         'https://connect.facebook.net/en_US/fbevents.js');
         fbq('init', '1017597647655738');
         fbq('track', 'PageView');
-        fbq('track', 'Lead');
     </script>
     <noscript>
         <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1017597647655738&ev=PageView&noscript=1" />
@@ -25,12 +24,8 @@
     <!-- End Meta Pixel Code -->
 
     <style>
-        /* ===== RESET & BASE ===== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        /* ===== COMPLETE STYLING ===== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
@@ -43,7 +38,6 @@
             margin: 0;
         }
 
-        /* ===== MAIN CONTAINER ===== */
         .container {
             max-width: 420px;
             width: 100%;
@@ -56,7 +50,6 @@
             overflow: hidden;
         }
 
-        /* ===== GLOW BORDER ANIMATION ===== */
         .container::before {
             content: '';
             position: absolute;
@@ -78,7 +71,7 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* ===== TIMER CIRCLE ===== */
+        /* ===== TIMER ===== */
         .timer-wrapper {
             position: relative;
             width: 120px;
@@ -127,7 +120,7 @@
             margin-top: 2px;
         }
 
-        /* ===== PROGRESS BAR (Alternative) ===== */
+        /* ===== PROGRESS BAR ===== */
         .progress-bar {
             width: 100%;
             height: 4px;
@@ -172,7 +165,7 @@
             color: #fff;
         }
 
-        /* ===== STATUS TEXT ===== */
+        /* ===== STATUS ===== */
         .status-text {
             font-size: 13px;
             color: #667799;
@@ -195,23 +188,7 @@
             50% { opacity: 0.3; transform: scale(0.8); }
         }
 
-        /* ===== FEATURES (Small) ===== */
-        .mini-features {
-            display: flex;
-            justify-content: center;
-            gap: 16px;
-            margin-top: 16px;
-            font-size: 11px;
-            color: #445566;
-        }
-
-        .mini-features span {
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
-
-        /* ===== REDIRECTING ANIMATION ===== */
+        /* ===== REDIRECTING ===== */
         .redirecting {
             display: none;
             margin-top: 12px;
@@ -234,6 +211,40 @@
             100% { opacity: 1; transform: translateY(0); }
         }
 
+        /* ===== MINI FEATURES ===== */
+        .mini-features {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 16px;
+            font-size: 11px;
+            color: #445566;
+        }
+
+        .mini-features span {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* ===== SUBSCRIBE CONFIRMATION (Hidden) ===== */
+        .subscribe-confirm {
+            display: none;
+            margin-top: 16px;
+            padding: 12px 16px;
+            background: rgba(0, 255, 150, 0.06);
+            border: 1px solid rgba(0, 255, 150, 0.15);
+            border-radius: 12px;
+            color: #00d4aa;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .subscribe-confirm.show {
+            display: block;
+            animation: fadeInUp 0.5s ease;
+        }
+
         /* ===== RESPONSIVE ===== */
         @media (max-width: 380px) {
             .container { padding: 28px 16px 24px; }
@@ -250,7 +261,7 @@
 
     <div class="container">
 
-        <!-- ===== TIMER CIRCLE ===== -->
+        <!-- ===== TIMER ===== -->
         <div class="timer-wrapper">
             <div class="timer-circle" id="timerCircle">
                 <div class="timer-circle-inner">
@@ -267,12 +278,12 @@
 
         <!-- ===== MAIN MESSAGE ===== -->
         <div class="main-message">
-            🚀 <span class="highlight">Aapki Profit</span><br />
+            🚀 <span class="highlight">Aapki Success</span><br />
             Hamari Jimmedari ✅
         </div>
 
         <div class="sub-message">
-            <strong>DEV ARMY</strong> • Live Panel • 32ms Ping
+            <strong>DEV ARMY</strong> • Analytical Panel • 32ms Speed
         </div>
 
         <!-- ===== STATUS ===== -->
@@ -283,7 +294,12 @@
 
         <!-- ===== REDIRECTING NOTIFICATION ===== -->
         <div class="redirecting" id="redirectingBox">
-            ✅ Redirecting to DEV ARMY Channel...
+            ✅ Redirecting to DEV ARMY...
+        </div>
+
+        <!-- ===== SUBSCRIBE CONFIRMATION (Track Subscribe) ===== -->
+        <div class="subscribe-confirm" id="subscribeConfirm">
+            🎉 <strong>Subscribe Tracked!</strong> — You joined DEV ARMY!
         </div>
 
         <!-- ===== MINI FEATURES ===== -->
@@ -301,7 +317,7 @@
         // ============================================================
         const TELEGRAM_LINK = 'https://t.me/+EV9k_vc6EjVlYWFl';
         const TIMER_SECONDS = 3;
-        const UPDATE_INTERVAL_MS = 50; // Update every 50ms for smooth animation
+        const UPDATE_INTERVAL_MS = 50;
 
         // ============================================================
         // DOM ELEMENTS
@@ -311,6 +327,7 @@
         const progressFill = document.getElementById('progressFill');
         const statusMessage = document.getElementById('statusMessage');
         const redirectingBox = document.getElementById('redirectingBox');
+        const subscribeConfirm = document.getElementById('subscribeConfirm');
 
         // ============================================================
         // TIMER LOGIC
@@ -319,8 +336,6 @@
         let startTime = Date.now();
         let totalDuration = TIMER_SECONDS * 1000;
         let redirectDone = false;
-
-        // Track engagement for Meta Pixel
         let hasInteracted = false;
 
         function updateTimer() {
@@ -328,7 +343,6 @@
             const remaining = Math.max(0, totalDuration - elapsed);
             const secondsRemaining = remaining / 1000;
 
-            // Update display (show 1 decimal place for smoothness, but round for display)
             if (secondsRemaining > 0.5) {
                 timerDisplay.textContent = Math.ceil(secondsRemaining);
             } else if (secondsRemaining > 0) {
@@ -337,15 +351,11 @@
                 timerDisplay.textContent = '0';
             }
 
-            // Update progress circle (conic gradient)
             const progress = 1 - (remaining / totalDuration);
             const degrees = progress * 360;
             timerCircle.style.background = `conic-gradient(#f5c842 ${degrees}deg, #1a2332 ${degrees}deg)`;
-
-            // Update progress bar
             progressFill.style.width = `${progress * 100}%`;
 
-            // Update status message
             const secs = Math.ceil(secondsRemaining);
             if (secs > 0) {
                 statusMessage.textContent = `⏳ Redirecting in ${secs} second${secs > 1 ? 's' : ''}...`;
@@ -353,44 +363,77 @@
                 statusMessage.textContent = '🚀 Redirecting now...';
             }
 
-            // Check if timer is complete
             if (remaining <= 0 && !redirectDone) {
                 redirectDone = true;
                 performRedirect();
                 return;
             }
 
-            // Continue updating
             if (!redirectDone) {
                 requestAnimationFrame(updateTimer);
             }
         }
 
         // ============================================================
-        // REDIRECT FUNCTION
+        // REDIRECT FUNCTION (Track Subscribe Click)
         // ============================================================
         function performRedirect() {
-            // Show redirecting box
             redirectingBox.classList.add('show');
-
-            // Update status
             statusMessage.textContent = '✅ Redirecting to DEV ARMY...';
 
-            // Track Click for Meta Pixel
+            // ============================================================
+            // 🔥 TRACK "SUBSCRIBE" EVENT — Meta Pixel ke liye
+            // ============================================================
             if (typeof fbq === 'function') {
+                // Click event track karo
                 fbq('track', 'Click', {
-                    content_name: 'Auto_Redirect_Timer',
+                    content_name: 'Telegram_Redirect_Timer',
                     destination: TELEGRAM_LINK
                 });
-                fbq('trackCustom', 'TimerRedirect', {
-                    timeWaited: TIMER_SECONDS,
-                    source: 'landing_page'
+
+                // 🔥 SUBSCRIBE event — custom event
+                fbq('trackCustom', 'TelegramSubscribe', {
+                    source: 'landing_page_timer',
+                    channel: 'DEV_ARMY',
+                    timestamp: Date.now()
                 });
+
+                // Standard "Lead" event bhi fire karo
+                fbq('track', 'Lead', {
+                    content_name: 'DEV_ARMY_Subscribe',
+                    content_category: 'Telegram_Channel'
+                });
+
+                console.log('✅ Subscribe tracked: TelegramSubscribe event fired');
             }
 
-            // Add a small delay before redirect for UX (shows the redirecting message)
+            // ============================================================
+            // SHOW SUBSCRIBE CONFIRMATION (Local feedback)
+            // ============================================================
+            subscribeConfirm.classList.add('show');
+
+            // ============================================================
+            // REDIRECT TO TELEGRAM
+            // ============================================================
             setTimeout(function() {
-                window.location.href = TELEGRAM_LINK;
+                // Open Telegram in new tab (so user can come back)
+                window.open(TELEGRAM_LINK, '_blank');
+
+                // Show confirmation that subscribe was tracked
+                statusMessage.textContent = '✅ Subscribe Tracked! Welcome to DEV ARMY 🎉';
+                subscribeConfirm.textContent = '🎉 Subscribe Tracked Successfully!';
+
+                // 🔥 Track that redirect was opened (for CPC optimization)
+                if (typeof fbq === 'function') {
+                    fbq('trackCustom', 'TelegramOpened', {
+                        method: 'timer_auto_redirect'
+                    });
+                }
+
+                // After 2 seconds, redirect main window to Telegram too (optional)
+                // Or keep them on the landing page with thank you message
+                // window.location.href = TELEGRAM_LINK; // Uncomment if you want full redirect
+
             }, 600);
         }
 
@@ -401,7 +444,7 @@
         updateTimer();
 
         // ============================================================
-        // USER INTERACTION TRACKING (For CPC optimization)
+        // MANUAL CLICK TRACKING (If user clicks on page before timer)
         // ============================================================
         document.addEventListener('click', function(e) {
             if (!hasInteracted) {
@@ -426,18 +469,32 @@
         });
 
         // ============================================================
-        // META PIXEL - PAGE VIEW & LEAD (Already fired in <head>)
+        // META PIXEL - PAGE VIEW (Already fired in <head>)
         // ============================================================
 
         // ============================================================
-        // FALLBACK: If user stays on page (e.g., Telegram blocked)
+        // FALLBACK: Track if user stays on page after Telegram opens
         // ============================================================
-        setTimeout(function() {
-            if (!redirectDone) {
-                // If Telegram app isn't installed, maybe show a message
-                // But we already redirected via window.location
+        let visibilityTimer = 0;
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                // User switched to Telegram app - good sign!
+                if (typeof fbq === 'function') {
+                    fbq('trackCustom', 'SwitchedToTelegram', {
+                        timestamp: Date.now()
+                    });
+                }
+                console.log('📱 User switched to Telegram app');
+            } else {
+                // User came back to landing page
+                if (typeof fbq === 'function') {
+                    fbq('trackCustom', 'ReturnedFromTelegram', {
+                        timestamp: Date.now()
+                    });
+                }
+                console.log('🔄 User returned from Telegram app');
             }
-        }, 5000);
+        });
 
         // ============================================================
         // PERFORMANCE LOGGING
@@ -445,15 +502,13 @@
         if (window.performance && window.performance.timing) {
             const loadTime = performance.timing.loadEventEnd - performance.timing.navigationStart;
             console.log('⏱️ Page loaded in:', loadTime, 'ms');
-            if (loadTime > 3000 && typeof fbq === 'function') {
-                fbq('trackCustom', 'SlowLoad', { loadTimeMs: loadTime });
-            }
         }
 
-        console.log('🚀 DEV ARMY Timer Landing Page');
+        console.log('🚀 DEV ARMY Timer Landing Page with Subscribe Tracking');
         console.log('⏱️ Timer:', TIMER_SECONDS, 'seconds');
         console.log('🔗 Redirect to:', TELEGRAM_LINK);
         console.log('📊 Meta Pixel: 1017597647655738');
+        console.log('✅ Subscribe tracking active');
     </script>
 
 </body>
