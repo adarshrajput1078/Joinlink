@@ -2,167 +2,255 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Join Our Telegram Channel</title>
-
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1823418595372573');
-    fbq('track', 'PageView');
-    </script>
-    <noscript>
-        <img height="1" width="1" style="display:none"
-        src="https://www.facebook.com/tr?id=1823418595372573&ev=PageView&noscript=1"/>
-    </noscript>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="robots" content="noindex, nofollow">
+    <title>VIP CHANNEL</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
         body {
-            background-color: #f6f8fb;
-            font-family: 'Arial', sans-serif;
+            background-color: #0d0818;
+            background-image: 
+                linear-gradient(rgba(138, 43, 226, 0.08) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(138, 43, 226, 0.08) 1px, transparent 1px),
+                radial-gradient(circle at 20% 20%, rgba(106, 27, 154, 0.45) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(123, 31, 162, 0.4) 0%, transparent 50%);
+            background-size: 40px 40px, 40px 40px, 100% 100%, 100% 100%;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
+            justify-content: center;
             align-items: center;
-            margin: 0;
-            padding: 40px 20px;
-            text-align: center;
-        }
-        
-        .headline {
-            font-size: 16px;
-            font-weight: 700;
-            color: #000;
-            max-width: 450px;
-            line-height: 1.5;
-            margin-bottom: 30px;
-            text-transform: uppercase;
-        }
-
-        .image-container {
+            font-family: 'Poppins', sans-serif;
+            color: #ffffff;
+            overflow: hidden;
             position: relative;
-            margin-bottom: 10px;
         }
 
-        /* Image ki styling screenshot ke hisaab se */
-        .image-container img {
-            width: 250px;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 12px;
-            border: 4px solid #6b00ff; /* Purple border */
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        .ring {
+            position: absolute;
+            border-radius: 50%;
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            pointer-events: none;
+        }
+        .ring-1 { width: 380px; height: 380px; top: -80px; left: -80px; }
+        .ring-2 { width: 350px; height: 350px; bottom: -100px; right: -60px; }
+
+        .card {
+            background: rgba(24, 16, 40, 0.78);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(168, 85, 247, 0.28);
+            border-radius: 28px;
+            padding: 50px 30px;
+            width: 90%;
+            max-width: 390px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.65);
+            z-index: 10;
         }
 
-        .stars {
-            color: #ffaa00;
+        .title {
+            font-family: 'Cinzel', serif;
             font-size: 28px;
-            margin-bottom: 15px;
+            font-weight: 700;
             letter-spacing: 2px;
+            margin-bottom: 34px;
+            color: #ffffff;
+            text-shadow: 0 2px 12px rgba(168, 85, 247, 0.45);
         }
 
         .join-btn {
-            background-color: #0051ff; /* Blue button */
-            color: white;
-            font-size: 16px;
-            font-weight: bold;
-            padding: 12px 20px;
-            border: 2px dashed #ff0000; /* Red dashed border */
-            border-radius: 4px;
-            text-decoration: none;
-            display: inline-flex;
+            display: flex;
             align-items: center;
             justify-content: center;
-            width: 280px;
-            box-shadow: inset 0 0 10px rgba(0,0,0,0.2), 0 4px 6px rgba(0,0,0,0.2);
+            gap: 12px;
+            width: 100%;
+            padding: 16px 24px;
+            background: linear-gradient(90deg, #a855f7 0%, #6366f1 100%);
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 600;
+            border-radius: 50px;
+            border: none;
             cursor: pointer;
-            text-transform: uppercase;
-        }
-
-        .join-btn svg {
-            margin-right: 10px;
-            fill: white;
-            width: 20px;
-            height: 20px;
+            box-shadow: 0 0 25px rgba(168, 85, 247, 0.65);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            user-select: none;
         }
 
         .join-btn:hover {
-            background-color: #0044cc;
+            transform: scale(1.03);
+            box-shadow: 0 0 35px rgba(168, 85, 247, 0.9);
         }
 
-        .countdown-container {
-            margin-top: 30px;
-            font-size: 16px;
-            font-weight: bold;
-            color: #333;
+        .join-btn:active {
+            transform: scale(0.97);
         }
 
-        .countdown-number {
-            font-size: 32px;
-            color: red;
-            display: block;
-            margin-top: 5px;
+        .telegram-icon {
+            width: 22px;
+            height: 22px;
+            fill: currentColor;
+        }
+
+        .status-text {
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.55);
+            margin-top: 16px;
+            letter-spacing: 0.4px;
+        }
+
+        /* Invisible Honeypot Trap */
+        .hp-trap {
+            opacity: 0;
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+            height: 0;
+            width: 0;
+            z-index: -1;
         }
     </style>
 </head>
 <body>
 
-    <div class="headline">
-        AGAR TUMHEN ACCURATE SINGLE AUR 100 AND 1% WINNING CHAHIYE AAJ IS CHANNEL KO JOIN KARO AUR APNI JOURNEY START KARO
-    </div>
+    <div class="ring ring-1"></div>
+    <div class="ring ring-2"></div>
 
-    <div class="image-container">
-        <img src="logo.jpg" alt="Join Now">
-    </div>
+    <!-- Honeypot Trap for Crawlers & Auto-Click Bots -->
+    <a href="#verify-bot" class="hp-trap" id="honeypot" tabindex="-1" aria-hidden="true">Join VIP Fast</a>
 
-    <div class="stars">
-        ★★★★★
-    </div>
+    <div class="card">
+        <h1 class="title">VIP CHANNEL</h1>
 
-    <a href="https://t.me/+_O2UvcNMmgQ3MGE1" class="join-btn" id="joinButton" onclick="trackSubscribe()">
-        <svg viewBox="0 0 24 24">
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.18-.08-.05-.19-.02-.27 0-.11.03-1.87 1.19-5.27 3.48-.5.35-.95.52-1.35.51-.44-.01-1.28-.25-1.9-.45-.77-.25-1.38-.38-1.33-.8.03-.22.34-.44.93-.68 3.63-1.58 6.06-2.63 7.28-3.13 3.46-1.42 4.18-1.68 4.65-1.69.1 0 .33.02.48.14.12.1.15.24.16.35.01.05.02.16.02.24z"/>
-        </svg>
-        JOIN TELEGRAM FREE
-    </a>
+        <button id="joinBtn" class="join-btn" type="button">
+            <svg class="telegram-icon" viewBox="0 0 24 24">
+                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+            </svg>
+            <span>Join Now</span>
+        </button>
 
-    <div class="countdown-container">
-        Redirecting in...
-        <span class="countdown-number" id="countdownDisplay">100</span>
+        <div class="status-text" id="securityStatus">TEAM RJ26 </div>
     </div>
 
     <script>
-        // Custom Subscribe Event ko track karne ke liye function
-        function trackSubscribe() {
-            if (typeof fbq !== 'undefined') {
-                fbq('track', 'Subscribe');
+        (function() {
+            // Encrypted Telegram Link: https://t.me/+wy1HAlBN_4w5Mzk1
+            const ENCRYPTED_LINK = "aHR0cHM6Ly90Lm1lLyt3eTFIQWxCTl80dzVNemsx";
+            const PIXEL_ID = "4133568300279277";
+
+            let isBot = false;
+            let humanScore = 0;
+            let pixelInitialized = false;
+            let clickProcessed = false;
+            const loadTimestamp = Date.now();
+
+            // 1. Deep Bot & Crawler Fingerprinting
+            function isAutomatedEnvironment() {
+                const ua = navigator.userAgent.toLowerCase();
+                const badAgents = [
+                    'bot', 'crawl', 'spider', 'facebookexternalhit', 'facebot',
+                    'headless', 'puppeteer', 'playwright', 'selenium', 'phantomjs',
+                    'curl', 'wget', 'python', 'scrapy', 'httpclient', 'preview'
+                ];
+
+                if (navigator.webdriver === true) return true;
+                if (!navigator.languages || navigator.languages.length === 0) return true;
+                if (window.outerWidth === 0 && window.outerHeight === 0) return true;
+                if (navigator.hardwareConcurrency && navigator.hardwareConcurrency < 1) return true;
+
+                for (let i = 0; i < badAgents.length; i++) {
+                    if (ua.includes(badAgents[i])) return true;
+                }
+                return false;
             }
-        }
 
-        // Fast countdown (100 to 0 in ~1.5 seconds) logic
-        let count = 100;
-        const counterElement = document.getElementById('countdownDisplay');
-        const telegramLink = "https://t.me/+_O2UvcNMmgQ3MGE1";
-
-        const interval = setInterval(() => {
-            count--;
-            counterElement.innerText = count;
-
-            if (count <= 0) {
-                clearInterval(interval);
-                
-                // Redirect hone se theek pehle Subscribe track karna
-                trackSubscribe();
-                
-                // Automatically Telegram par bhejna
-                window.location.href = telegramLink;
+            if (isAutomatedEnvironment()) {
+                isBot = true;
             }
-        }, 15); // 15 milliseconds ki speed se kam hoga (100 * 15ms = 1500ms = 1.5 sec)
+
+            // 2. Honeypot Trap
+            document.getElementById('honeypot').addEventListener('click', function(e) {
+                e.preventDefault();
+                isBot = true;
+            });
+
+            // 3. Load Meta Pixel ONLY for Verified Humans
+            function triggerMetaPixel() {
+                if (isBot || pixelInitialized) return;
+                pixelInitialized = true;
+
+                !function(f,b,e,v,n,t,s)
+                {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+                n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+                if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+                n.queue=[];t=b.createElement(e);t.async=!0;
+                t.src=v;s=b.getElementsByTagName(e)[0];
+                s.parentNode.insertBefore(t,s)}(window, document,'script',
+                'https://connect.facebook.net/en_US/fbevents.js');
+
+                fbq('init', PIXEL_ID);
+                fbq('track', 'PageView');
+            }
+
+            // 4. Real Human Activity Tracker
+            function recordHumanSignal(e) {
+                if (isBot) return;
+                if (e && e.isTrusted === false) {
+                    isBot = true;
+                    return;
+                }
+                humanScore++;
+                if (humanScore >= 1 && !pixelInitialized) {
+                    triggerMetaPixel();
+                }
+            }
+
+            window.addEventListener('touchstart', recordHumanSignal, { passive: true });
+            window.addEventListener('mousemove', recordHumanSignal, { passive: true });
+            window.addEventListener('scroll', recordHumanSignal, { passive: true });
+
+            // 5. Strict Zero-Fake-Click Handler
+            const joinBtn = document.getElementById('joinBtn');
+            joinBtn.addEventListener('click', function(e) {
+                if (!e.isTrusted) {
+                    isBot = true;
+                    return;
+                }
+
+                const elapsed = Date.now() - loadTimestamp;
+                if (isBot || isAutomatedEnvironment() || elapsed < 900 || clickProcessed) {
+                    return;
+                }
+
+                clickProcessed = true;
+
+                if (!pixelInitialized) {
+                    triggerMetaPixel();
+                }
+
+                if (typeof fbq === 'function') {
+                    fbq('track', 'Lead');
+                }
+
+                joinBtn.innerHTML = '<span>Opening VIP Channel...</span>';
+                joinBtn.style.opacity = '0.85';
+
+                const targetUrl = atob(ENCRYPTED_LINK);
+                setTimeout(function() {
+                    window.location.replace(targetUrl);
+                }, 300);
+            });
+        })();
     </script>
-
 </body>
 </html>
