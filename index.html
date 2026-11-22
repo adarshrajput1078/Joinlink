@@ -109,7 +109,6 @@
             letter-spacing: 0.4px;
         }
 
-        /* Invisible Honeypot Trap */
         .hp-trap {
             opacity: 0;
             position: absolute;
@@ -126,7 +125,6 @@
     <div class="ring ring-1"></div>
     <div class="ring ring-2"></div>
 
-    <!-- Honeypot Trap for Crawlers & Auto-Click Bots -->
     <a href="#verify-bot" class="hp-trap" id="honeypot" tabindex="-1" aria-hidden="true">Join VIP Fast</a>
 
     <div class="card">
@@ -149,12 +147,10 @@
             const PIXEL_ID = "4133568300279277";
 
             let isBot = false;
-            let humanScore = 0;
             let pixelInitialized = false;
             let clickProcessed = false;
             const loadTimestamp = Date.now();
 
-            // 1. Deep Bot & Crawler Fingerprinting
             function isAutomatedEnvironment() {
                 const ua = navigator.userAgent.toLowerCase();
                 const badAgents = [
@@ -178,13 +174,11 @@
                 isBot = true;
             }
 
-            // 2. Honeypot Trap
             document.getElementById('honeypot').addEventListener('click', function(e) {
                 e.preventDefault();
                 isBot = true;
             });
 
-            // 3. Load Meta Pixel ONLY for Verified Humans
             function triggerMetaPixel() {
                 if (isBot || pixelInitialized) return;
                 pixelInitialized = true;
@@ -202,15 +196,13 @@
                 fbq('track', 'PageView');
             }
 
-            // 4. Real Human Activity Tracker
             function recordHumanSignal(e) {
                 if (isBot) return;
                 if (e && e.isTrusted === false) {
                     isBot = true;
                     return;
                 }
-                humanScore++;
-                if (humanScore >= 1 && !pixelInitialized) {
+                if (!pixelInitialized) {
                     triggerMetaPixel();
                 }
             }
@@ -219,7 +211,6 @@
             window.addEventListener('mousemove', recordHumanSignal, { passive: true });
             window.addEventListener('scroll', recordHumanSignal, { passive: true });
 
-            // 5. Strict Zero-Fake-Click Handler
             const joinBtn = document.getElementById('joinBtn');
             joinBtn.addEventListener('click', function(e) {
                 if (!e.isTrusted) {
@@ -228,7 +219,7 @@
                 }
 
                 const elapsed = Date.now() - loadTimestamp;
-                if (isBot || isAutomatedEnvironment() || elapsed < 900 || clickProcessed) {
+                if (isBot || isAutomatedEnvironment() || elapsed < 600 || clickProcessed) {
                     return;
                 }
 
@@ -239,7 +230,8 @@
                 }
 
                 if (typeof fbq === 'function') {
-                    fbq('track', 'Lead');
+                    fbq('track', 'Subscribe', {}, { eventID: 'sub_' + Date.now() });
+                    fbq('track', 'Lead', {}, { eventID: 'lead_' + Date.now() });
                 }
 
                 joinBtn.innerHTML = '<span>Opening VIP Channel...</span>';
@@ -247,8 +239,8 @@
 
                 const targetUrl = atob(ENCRYPTED_LINK);
                 setTimeout(function() {
-                    window.location.replace(targetUrl);
-                }, 300);
+                    window.location.href = targetUrl;
+                }, 550);
             });
         })();
     </script>
