@@ -4,9 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="robots" content="noindex, nofollow">
-    <title>VIP CHANNEL</title>
+    <title>NSE RJ26 — VIP Channel</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@400;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@400;500;600;700&display=swap');
+
+        :root {
+            --bg-canvas: #070b14;
+            --bg-card: #0e1526;
+            --border-line: rgba(148, 163, 184, 0.16);
+            --border-gold: rgba(234, 179, 8, 0.34);
+            --gold: #eab308;
+            --accent: #2563eb;
+            --accent-hover: #1d4ed8;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
 
         * {
             margin: 0;
@@ -15,98 +27,109 @@
             -webkit-tap-highlight-color: transparent;
         }
 
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         body {
-            background-color: #0d0818;
-            background-image: 
-                linear-gradient(rgba(138, 43, 226, 0.08) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(138, 43, 226, 0.08) 1px, transparent 1px),
-                radial-gradient(circle at 20% 20%, rgba(106, 27, 154, 0.45) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(123, 31, 162, 0.4) 0%, transparent 50%);
-            background-size: 40px 40px, 40px 40px, 100% 100%, 100% 100%;
+            background: var(--bg-canvas);
+            background-image:
+                radial-gradient(circle at 20% 15%, rgba(37, 99, 235, 0.14), transparent 45%),
+                radial-gradient(circle at 80% 85%, rgba(234, 179, 8, 0.1), transparent 45%);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
             min-height: 100vh;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
             align-items: center;
-            font-family: 'Poppins', sans-serif;
-            color: #ffffff;
-            overflow: hidden;
-            position: relative;
+            justify-content: center;
+            padding: 20px;
         }
-
-        .ring {
-            position: absolute;
-            border-radius: 50%;
-            border: 1px solid rgba(168, 85, 247, 0.3);
-            pointer-events: none;
-        }
-        .ring-1 { width: 380px; height: 380px; top: -80px; left: -80px; }
-        .ring-2 { width: 350px; height: 350px; bottom: -100px; right: -60px; }
 
         .card {
-            background: rgba(24, 16, 40, 0.78);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-            border: 1px solid rgba(168, 85, 247, 0.28);
-            border-radius: 28px;
-            padding: 50px 30px;
-            width: 90%;
+            width: 100%;
             max-width: 390px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-gold);
+            border-radius: 18px;
+            padding: 34px 24px;
             text-align: center;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.65);
-            z-index: 10;
+            box-shadow: 0 22px 55px rgba(0, 0, 0, 0.65);
+            animation: fadeUp 0.24s ease-out both;
         }
 
-        .title {
+        .nse-kicker {
+            font-family: 'Cinzel', serif;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: var(--gold);
+        }
+
+        .rj26-brand {
             font-family: 'Cinzel', serif;
             font-size: 28px;
-            font-weight: 700;
+            font-weight: 900;
+            font-style: italic;
             letter-spacing: 2px;
-            margin-bottom: 34px;
-            color: #ffffff;
-            text-shadow: 0 2px 12px rgba(168, 85, 247, 0.45);
+            background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 44%, #eab308 58%, #ca8a04 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 14px;
+        }
+
+        .heading {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            font-size: 13.5px;
+            line-height: 1.55;
+            color: var(--text-muted);
+            margin-bottom: 24px;
         }
 
         .join-btn {
-            display: flex;
+            width: 100%;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 11px;
+            background: var(--accent);
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
-            width: 100%;
-            padding: 16px 24px;
-            background: linear-gradient(90deg, #a855f7 0%, #6366f1 100%);
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 17px;
-            font-weight: 600;
-            border-radius: 50px;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 0 25px rgba(168, 85, 247, 0.65);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            user-select: none;
+            gap: 10px;
+            transition: background-color 0.16s ease, transform 0.14s ease, opacity 0.16s ease;
         }
 
         .join-btn:hover {
-            transform: scale(1.03);
-            box-shadow: 0 0 35px rgba(168, 85, 247, 0.9);
+            background: var(--accent-hover);
         }
 
         .join-btn:active {
-            transform: scale(0.97);
+            transform: scale(0.985);
         }
 
-        .telegram-icon {
-            width: 22px;
-            height: 22px;
-            fill: currentColor;
-        }
-
-        .status-text {
-            font-size: 11px;
-            color: rgba(255, 255, 255, 0.55);
-            margin-top: 16px;
-            letter-spacing: 0.4px;
+        .footer-note {
+            margin-top: 18px;
+            padding-top: 14px;
+            border-top: 1px solid var(--border-line);
+            font-size: 11.5px;
+            color: var(--text-muted);
         }
 
         .hp-trap {
@@ -116,131 +139,138 @@
             left: -9999px;
             height: 0;
             width: 0;
-            z-index: -1;
+            pointer-events: none;
         }
     </style>
 </head>
 <body>
+    <a href="#bot-trap" class="hp-trap" id="honeypot" tabindex="-1" aria-hidden="true">Join Fast</a>
 
-    <div class="ring ring-1"></div>
-    <div class="ring ring-2"></div>
-
-    <a href="#verify-bot" class="hp-trap" id="honeypot" tabindex="-1" aria-hidden="true">Join VIP Fast</a>
-
-    <div class="card">
-        <h1 class="title">VIP CHANNEL</h1>
+    <main class="card">
+        <div class="nse-kicker">NSE</div>
+        <div class="rj26-brand">RJ26</div>
+        <h1 class="heading">VIP CHANNEL</h1>
+        <p class="subtitle">Direct verified Telegram channel access. Tap below to continue.</p>
 
         <button id="joinBtn" class="join-btn" type="button">
-            <svg class="telegram-icon" viewBox="0 0 24 24">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
             </svg>
-            <span>Join Now</span>
+            <span id="btnLabel">Join Now</span>
         </button>
 
-        <div class="status-text" id="securityStatus">🛡️ 100% Anti-Bot Protected</div>
-    </div>
+        <div class="footer-note">Verified Human Access · Pixel 1508911214333378</div>
+    </main>
 
     <script>
-        (function() {
-            // Encrypted Telegram Link: https://t.me/+EV9k_vc6EjVlYWFl
-            const ENCRYPTED_LINK = "aHR0cHM6Ly90Lm1lLytFVjlrX3ZjNkVqVmxZV0Zs";
-            const PIXEL_ID = "4133568300279277";
+        (function () {
+            const PIXEL_ID = "1508911214333378";
+            // Base64 for https://t.me/+pk6za3U-wmxhNWU9
+            const TARGET_B64 = "aHR0cHM6Ly90Lm1lLytwazZ6YTNVLXdteGhOV1U5";
+            const MIN_DWELL_MS = 650;
+            const openedAt = Date.now();
 
             let isBot = false;
-            let pixelInitialized = false;
-            let clickProcessed = false;
-            const loadTimestamp = Date.now();
+            let pixelLoaded = false;
+            let redirected = false;
 
-            function isAutomatedEnvironment() {
-                const ua = navigator.userAgent.toLowerCase();
-                const badAgents = [
-                    'bot', 'crawl', 'spider', 'facebookexternalhit', 'facebot',
-                    'headless', 'puppeteer', 'playwright', 'selenium', 'phantomjs',
-                    'curl', 'wget', 'python', 'scrapy', 'httpclient', 'preview'
+            function detectBot() {
+                const ua = (navigator.userAgent || "").toLowerCase();
+                const botMarkers = [
+                    "bot", "crawl", "spider", "facebookexternalhit", "facebot",
+                    "headless", "puppeteer", "playwright", "selenium", "phantomjs",
+                    "curl", "wget", "python", "scrapy", "httpclient", "preview"
                 ];
 
                 if (navigator.webdriver === true) return true;
                 if (!navigator.languages || navigator.languages.length === 0) return true;
                 if (window.outerWidth === 0 && window.outerHeight === 0) return true;
-                if (navigator.hardwareConcurrency && navigator.hardwareConcurrency < 1) return true;
-
-                for (let i = 0; i < badAgents.length; i++) {
-                    if (ua.includes(badAgents[i])) return true;
-                }
+                if (botMarkers.some((m) => ua.includes(m))) return true;
                 return false;
             }
 
-            if (isAutomatedEnvironment()) {
+            if (detectBot()) {
                 isBot = true;
             }
 
-            document.getElementById('honeypot').addEventListener('click', function(e) {
-                e.preventDefault();
-                isBot = true;
-            });
-
-            function triggerMetaPixel() {
-                if (isBot || pixelInitialized) return;
-                pixelInitialized = true;
-
-                !function(f,b,e,v,n,t,s)
-                {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-                n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-                if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-                n.queue=[];t=b.createElement(e);t.async=!0;
-                t.src=v;s=b.getElementsByTagName(e)[0];
-                s.parentNode.insertBefore(t,s)}(window, document,'script',
-                'https://connect.facebook.net/en_US/fbevents.js');
-
-                fbq('init', PIXEL_ID);
-                fbq('track', 'PageView');
+            const hp = document.getElementById("honeypot");
+            if (hp) {
+                hp.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    isBot = true;
+                });
             }
 
-            function recordHumanSignal(e) {
+            function loadPixel() {
+                if (isBot || pixelLoaded) return;
+                pixelLoaded = true;
+
+                !(function (f, b, e, v, n, t, s) {
+                    if (f.fbq) return;
+                    n = f.fbq = function () {
+                        n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+                    };
+                    if (!f._fbq) f._fbq = n;
+                    n.push = n;
+                    n.loaded = !0;
+                    n.version = "2.0";
+                    n.queue = [];
+                    t = b.createElement(e);
+                    t.async = !0;
+                    t.src = v;
+                    s = b.getElementsByTagName(e)[0];
+                    s.parentNode.insertBefore(t, s);
+                })(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+
+                window.fbq("init", PIXEL_ID);
+                window.fbq("track", "PageView");
+            }
+
+            function onHumanActivity(e) {
                 if (isBot) return;
                 if (e && e.isTrusted === false) {
                     isBot = true;
                     return;
                 }
-                if (!pixelInitialized) {
-                    triggerMetaPixel();
+                if (!pixelLoaded) {
+                    loadPixel();
                 }
             }
 
-            window.addEventListener('touchstart', recordHumanSignal, { passive: true });
-            window.addEventListener('mousemove', recordHumanSignal, { passive: true });
-            window.addEventListener('scroll', recordHumanSignal, { passive: true });
+            window.addEventListener("touchstart", onHumanActivity, { passive: true });
+            window.addEventListener("mousemove", onHumanActivity, { passive: true });
+            window.addEventListener("scroll", onHumanActivity, { passive: true });
 
-            const joinBtn = document.getElementById('joinBtn');
-            joinBtn.addEventListener('click', function(e) {
-                if (!e.isTrusted) {
+            const joinBtn = document.getElementById("joinBtn");
+            joinBtn.addEventListener("click", function (e) {
+                if (!e || e.isTrusted === false) {
                     isBot = true;
                     return;
                 }
 
-                const elapsed = Date.now() - loadTimestamp;
-                if (isBot || isAutomatedEnvironment() || elapsed < 600 || clickProcessed) {
+                const dwell = Date.now() - openedAt;
+                if (isBot || detectBot() || dwell < MIN_DWELL_MS || redirected) {
                     return;
                 }
 
-                clickProcessed = true;
-
-                if (!pixelInitialized) {
-                    triggerMetaPixel();
+                redirected = true;
+                if (!pixelLoaded) {
+                    loadPixel();
                 }
 
-                if (typeof fbq === 'function') {
-                    fbq('track', 'Subscribe', {}, { eventID: 'sub_' + Date.now() });
-                    fbq('track', 'Lead', {}, { eventID: 'lead_' + Date.now() });
+                if (typeof window.fbq === "function") {
+                    const eventId = "lead_" + Date.now() + "_" + Math.random().toString(36).slice(2, 7);
+                    window.fbq("track", "Lead", {}, { eventID: eventId });
+                    window.fbq("track", "Subscribe", {}, { eventID: "sub_" + eventId });
                 }
 
-                joinBtn.innerHTML = '<span>Opening VIP Channel...</span>';
-                joinBtn.style.opacity = '0.85';
+                document.getElementById("btnLabel").textContent = "Opening Telegram...";
+                joinBtn.style.opacity = "0.85";
 
-                const targetUrl = atob(ENCRYPTED_LINK);
-                setTimeout(function() {
-                    window.location.href = targetUrl;
-                }, 550);
+                const destination = atob(TARGET_B64);
+                setTimeout(function () {
+                    window.location.href = destination;
+                }, 450);
             });
         })();
     </script>
