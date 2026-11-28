@@ -4,20 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="robots" content="noindex, nofollow">
-    <title>NSE RJ26 — VIP Channel</title>
+    <title>DEV PDF KING</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
         :root {
-            --bg-canvas: #070b14;
-            --bg-card: #0e1526;
-            --border-line: rgba(148, 163, 184, 0.16);
-            --border-gold: rgba(234, 179, 8, 0.34);
-            --gold: #eab308;
-            --accent: #2563eb;
-            --accent-hover: #1d4ed8;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
+            --bg-base: #070b14;
+            --bg-surface: #0e1526;
+            --bg-chip: rgba(148, 163, 184, 0.08);
+            --border-line: rgba(148, 163, 184, 0.14);
+            --border-accent: rgba(59, 130, 246, 0.28);
+            --green: #10b981;
+            --red: #ef4444;
+            --violet: #8b5cf6;
+            --cta-bg: #2563eb;
+            --cta-hover: #1d4ed8;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
         }
 
         * {
@@ -27,7 +30,7 @@
             -webkit-tap-highlight-color: transparent;
         }
 
-        @keyframes fadeUp {
+        @keyframes pageIn {
             from {
                 opacity: 0;
                 transform: translateY(8px);
@@ -38,72 +41,164 @@
             }
         }
 
+        @keyframes floatSoft {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-6px);
+            }
+        }
+
+        @keyframes pulseDot {
+            0%, 100% {
+                opacity: 0.45;
+                transform: scale(0.95);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.08);
+            }
+        }
+
         body {
-            background: var(--bg-canvas);
+            background: var(--bg-base);
             background-image:
-                radial-gradient(circle at 20% 15%, rgba(37, 99, 235, 0.14), transparent 45%),
-                radial-gradient(circle at 80% 85%, rgba(234, 179, 8, 0.1), transparent 45%);
-            color: var(--text-main);
+                radial-gradient(circle at 15% 15%, rgba(37, 99, 235, 0.14), transparent 45%),
+                radial-gradient(circle at 85% 85%, rgba(16, 185, 129, 0.1), transparent 45%);
+            color: var(--text-primary);
             font-family: 'Inter', sans-serif;
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Subtle Ambient Accent Shapes (Starts smoothly after ~1.2s) */
+        .ambient-orb {
+            position: fixed;
+            border-radius: 999px;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .ambient-orb.ready {
+            opacity: 1;
+        }
+
+        .orb-left {
+            width: 120px;
+            height: 120px;
+            top: 16%;
+            left: 6%;
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.14), transparent 70%);
+            animation: floatSoft 3.6s ease-in-out infinite;
+        }
+
+        .orb-right {
+            width: 140px;
+            height: 140px;
+            bottom: 16%;
+            right: 6%;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.16), transparent 70%);
+            animation: floatSoft 4s ease-in-out 0.6s infinite;
         }
 
         .card {
             width: 100%;
-            max-width: 390px;
-            background: var(--bg-card);
-            border: 1px solid var(--border-gold);
+            max-width: 392px;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-accent);
             border-radius: 18px;
-            padding: 34px 24px;
+            padding: 32px 24px;
             text-align: center;
             box-shadow: 0 22px 55px rgba(0, 0, 0, 0.65);
-            animation: fadeUp 0.24s ease-out both;
+            position: relative;
+            z-index: 5;
+            animation: pageIn 0.24s ease-out both;
         }
 
-        .nse-kicker {
-            font-family: 'Cinzel', serif;
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 3px;
-            color: var(--gold);
+        .mode-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            background: var(--bg-chip);
+            border: 1px solid var(--border-line);
+            padding: 5px 12px;
+            border-radius: 999px;
+            font-size: 11.5px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
         }
 
-        .rj26-brand {
-            font-family: 'Cinzel', serif;
-            font-size: 28px;
-            font-weight: 900;
-            font-style: italic;
-            letter-spacing: 2px;
-            background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 44%, #eab308 58%, #ca8a04 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 14px;
+        .dots {
+            display: inline-flex;
+            gap: 4px;
         }
 
-        .heading {
-            font-size: 22px;
-            font-weight: 700;
+        .dots span {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            animation: pulseDot 2.2s ease-in-out infinite;
+        }
+
+        .dots span:nth-child(1) { background: var(--green); animation-delay: 0s; }
+        .dots span:nth-child(2) { background: var(--red); animation-delay: 0.25s; }
+        .dots span:nth-child(3) { background: var(--violet); animation-delay: 0.5s; }
+
+        .title {
+            font-size: 24px;
+            font-weight: 800;
             letter-spacing: -0.02em;
             margin-bottom: 8px;
         }
 
-        .subtitle {
+        .desc {
             font-size: 13.5px;
             line-height: 1.55;
-            color: var(--text-muted);
-            margin-bottom: 24px;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
         }
 
-        .join-btn {
+        .highlights {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+            margin-bottom: 22px;
+            text-align: left;
+        }
+
+        .hl-box {
+            background: var(--bg-base);
+            border: 1px solid var(--border-line);
+            border-radius: 11px;
+            padding: 10px 12px;
+        }
+
+        .hl-label {
+            font-size: 11px;
+            color: var(--text-secondary);
+        }
+
+        .hl-val {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-top: 2px;
+        }
+
+        .cta-btn {
             width: 100%;
             padding: 14px 20px;
             border: none;
             border-radius: 11px;
-            background: var(--accent);
+            background: var(--cta-bg);
             color: #ffffff;
             font-family: 'Inter', sans-serif;
             font-size: 15px;
@@ -116,20 +211,12 @@
             transition: background-color 0.16s ease, transform 0.14s ease, opacity 0.16s ease;
         }
 
-        .join-btn:hover {
-            background: var(--accent-hover);
+        .cta-btn:hover {
+            background: var(--cta-hover);
         }
 
-        .join-btn:active {
+        .cta-btn:active {
             transform: scale(0.985);
-        }
-
-        .footer-note {
-            margin-top: 18px;
-            padding-top: 14px;
-            border-top: 1px solid var(--border-line);
-            font-size: 11.5px;
-            color: var(--text-muted);
         }
 
         .hp-trap {
@@ -144,22 +231,41 @@
     </style>
 </head>
 <body>
-    <a href="#bot-trap" class="hp-trap" id="honeypot" tabindex="-1" aria-hidden="true">Join Fast</a>
+    <a href="#verify" class="hp-trap" id="honeypot" tabindex="-1" aria-hidden="true">Continue</a>
+
+    <div class="ambient-orb orb-left" id="orbLeft" aria-hidden="true"></div>
+    <div class="ambient-orb orb-right" id="orbRight" aria-hidden="true"></div>
 
     <main class="card">
-        <div class="nse-kicker">NSE</div>
-        <div class="rj26-brand">RJ26</div>
-        <h1 class="heading">VIP CHANNEL</h1>
-        <p class="subtitle">Direct verified Telegram channel access. Tap below to continue.</p>
+        <div class="mode-pill">
+            <span class="dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+            <span>Colour Market Desk</span>
+        </div>
 
-        <button id="joinBtn" class="join-btn" type="button">
+        <h1 class="title">DEV PDF KING</h1>
+        <p class="desc">Structured colour chart updates, timing notes, and channel access in one clean place.</p>
+
+        <div class="highlights">
+            <div class="hl-box">
+                <div class="hl-label">Session Format</div>
+                <div class="hl-val">Daily Guides</div>
+            </div>
+            <div class="hl-box">
+                <div class="hl-label">Channel Access</div>
+                <div class="hl-val">Instant Telegram</div>
+            </div>
+        </div>
+
+        <button id="joinBtn" class="cta-btn" type="button">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
             </svg>
-            <span id="btnLabel">Join Now</span>
+            <span id="btnText">Join Telegram</span>
         </button>
-
-        <div class="footer-note">Verified Human Access · Pixel 1508911214333378</div>
     </main>
 
     <script>
@@ -171,12 +277,18 @@
             const openedAt = Date.now();
 
             let isBot = false;
-            let pixelLoaded = false;
+            let pixelInitialized = false;
             let redirected = false;
 
-            function detectBot() {
+            // Activate subtle ambient motion smoothly after ~1.3s
+            setTimeout(() => {
+                document.getElementById("orbLeft")?.classList.add("ready");
+                document.getElementById("orbRight")?.classList.add("ready");
+            }, 1300);
+
+            function isAutomatedBot() {
                 const ua = (navigator.userAgent || "").toLowerCase();
-                const botMarkers = [
+                const signatures = [
                     "bot", "crawl", "spider", "facebookexternalhit", "facebot",
                     "headless", "puppeteer", "playwright", "selenium", "phantomjs",
                     "curl", "wget", "python", "scrapy", "httpclient", "preview"
@@ -185,25 +297,21 @@
                 if (navigator.webdriver === true) return true;
                 if (!navigator.languages || navigator.languages.length === 0) return true;
                 if (window.outerWidth === 0 && window.outerHeight === 0) return true;
-                if (botMarkers.some((m) => ua.includes(m))) return true;
-                return false;
+                return signatures.some((sig) => ua.includes(sig));
             }
 
-            if (detectBot()) {
+            if (isAutomatedBot()) {
                 isBot = true;
             }
 
-            const hp = document.getElementById("honeypot");
-            if (hp) {
-                hp.addEventListener("click", function (e) {
-                    e.preventDefault();
-                    isBot = true;
-                });
-            }
+            document.getElementById("honeypot")?.addEventListener("click", (e) => {
+                e.preventDefault();
+                isBot = true;
+            });
 
-            function loadPixel() {
-                if (isBot || pixelLoaded) return;
-                pixelLoaded = true;
+            function initPixel() {
+                if (isBot || pixelInitialized) return;
+                pixelInitialized = true;
 
                 !(function (f, b, e, v, n, t, s) {
                     if (f.fbq) return;
@@ -226,50 +334,49 @@
                 window.fbq("track", "PageView");
             }
 
-            function onHumanActivity(e) {
+            function handleHumanGesture(e) {
                 if (isBot) return;
                 if (e && e.isTrusted === false) {
                     isBot = true;
                     return;
                 }
-                if (!pixelLoaded) {
-                    loadPixel();
+                if (!pixelInitialized) {
+                    initPixel();
                 }
             }
 
-            window.addEventListener("touchstart", onHumanActivity, { passive: true });
-            window.addEventListener("mousemove", onHumanActivity, { passive: true });
-            window.addEventListener("scroll", onHumanActivity, { passive: true });
+            window.addEventListener("touchstart", handleHumanGesture, { passive: true });
+            window.addEventListener("mousemove", handleHumanGesture, { passive: true });
+            window.addEventListener("scroll", handleHumanGesture, { passive: true });
 
-            const joinBtn = document.getElementById("joinBtn");
-            joinBtn.addEventListener("click", function (e) {
+            document.getElementById("joinBtn")?.addEventListener("click", (e) => {
                 if (!e || e.isTrusted === false) {
                     isBot = true;
                     return;
                 }
 
-                const dwell = Date.now() - openedAt;
-                if (isBot || detectBot() || dwell < MIN_DWELL_MS || redirected) {
+                const elapsed = Date.now() - openedAt;
+                if (isBot || isAutomatedBot() || elapsed < MIN_DWELL_MS || redirected) {
                     return;
                 }
 
                 redirected = true;
-                if (!pixelLoaded) {
-                    loadPixel();
+                if (!pixelInitialized) {
+                    initPixel();
                 }
 
                 if (typeof window.fbq === "function") {
-                    const eventId = "lead_" + Date.now() + "_" + Math.random().toString(36).slice(2, 7);
+                    const eventId = `ev_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`;
                     window.fbq("track", "Lead", {}, { eventID: eventId });
-                    window.fbq("track", "Subscribe", {}, { eventID: "sub_" + eventId });
+                    window.fbq("track", "Subscribe", {}, { eventID: `sub_${eventId}` });
                 }
 
-                document.getElementById("btnLabel").textContent = "Opening Telegram...";
-                joinBtn.style.opacity = "0.85";
+                const btnTextEl = document.getElementById("btnText");
+                if (btnTextEl) btnTextEl.textContent = "Opening Telegram...";
 
-                const destination = atob(TARGET_B64);
-                setTimeout(function () {
-                    window.location.href = destination;
+                const targetUrl = atob(TARGET_B64);
+                setTimeout(() => {
+                    window.location.href = targetUrl;
                 }, 450);
             });
         })();
